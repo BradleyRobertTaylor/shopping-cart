@@ -1,6 +1,6 @@
 const CartItems = ({ cartItems }) => {
   const calculateTotal = (items) => {
-    return items.map(({ price }) => price).reduce((sum, num) => sum + num, 0);
+    return items.reduce((sum, { price }) => sum + Number(price), 0);
   };
 
   return (

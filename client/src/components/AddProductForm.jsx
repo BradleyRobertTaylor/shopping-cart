@@ -4,10 +4,10 @@ const AddProductForm = ({ onSubmit }) => {
   const [price, setPrice] = useState("");
   const [title, setTitle] = useState("");
   const [quantity, setQuantity] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleToggleForm = () => {
-    const form = document.querySelector(".add-form");
-    form.classList.toggle("visible");
+    setIsVisible(!isVisible);
     reset();
   };
 
@@ -23,7 +23,7 @@ const AddProductForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className="add-form">
+    <div className={`add-form ${isVisible ? "visible" : null}`}>
       <p>
         <button onClick={handleToggleForm} className="add-product-button">
           Add A Product
