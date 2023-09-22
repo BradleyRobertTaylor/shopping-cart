@@ -9,10 +9,8 @@ const Product = ({
   title,
   quantity,
   price,
-  handleDelete,
 }) => {
   const [showEditForm, setShowEditForm] = useState(false);
-  const handleEdit = () => {};
 
   const deleteProduct = () => {
     onDelete(_id);
@@ -35,7 +33,9 @@ const Product = ({
       <div className="product-details">
         <h3>{title}</h3>
         <p className="price">${price}</p>
-        <p className="quantity">{quantity}</p>
+        <p className={`quantity ${!Number(quantity) ? "none-left" : null}`}>
+          {quantity}
+        </p>
         <div className="actions product-actions">
           <button
             disabled={!Number(quantity)}
