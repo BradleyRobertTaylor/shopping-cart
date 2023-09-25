@@ -30,7 +30,7 @@ const AddProductForm = ({ onSubmit }) => {
         </button>
       </p>
       <h3>Add Product</h3>
-      <form onSubmit={handleSubmit}>
+      <form aria-label="form" onSubmit={handleSubmit}>
         <div className="input-group">
           <label htmlFor="product-name">Product Name:</label>
           <input
